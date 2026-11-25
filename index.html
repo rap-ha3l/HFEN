@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HFEN Enterprises | Oils, powders and herbs for skin, hair and wellness</title>
+<meta name="description" content="Pure, premium and versatile oils, butters, powders and herbs for your skin, hair and wellness. Order online from HFEN Enterprises.">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+  <nav class="l"><a href="#shop" data-go="shop">Shop</a><a href="#about" data-go="shop">About</a><a href="#contact" data-go="shop">Contact</a></nav>
+  <a class="brand" href="#" data-go="shop"><img src="logo.png" alt="" width="46" height="46"><span><b>HFEN</b><small>Enterprises</small></span></a>
+  <div class="r"><button id="cartBtn" class="pill">Cart (<span id="cartN">0</span>)</button></div>
+</div></header>
+
+<main>
+<section id="v-shop">
+  <div class="wrap">
+    <div class="hero">
+      <div class="copy">
+        <p class="k">Pure · Premium · Versatile</p>
+        <h1>Nature’s goodness for your skin, hair and wellness.</h1>
+        <p>Browse our oils, butters, powders and herbs, choose a size and order in a few taps.</p>
+        <a class="btn" href="#shop">Shop products</a>
+      </div>
+      <div class="leaf"></div><div class="leaf s"></div>
+    </div>
+
+    <div class="tools" id="shop">
+      <input id="search" type="search" placeholder="Search products" aria-label="Search products">
+      <div class="chips" id="chips">
+        <button data-t="all" class="on">All</button><button data-t="oil">Oils &amp; Butters</button><button data-t="powder">Powders &amp; Extracts</button><button data-t="leaf">Leaves &amp; Herbs</button>
+      </div>
+      <select id="sort" aria-label="Sort"><option value="az">Name A to Z</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select>
+    </div>
+    <p id="count" class="muted"></p>
+    <div id="groups"></div>
+    <p id="none" class="muted" hidden>No products match your search.</p>
+
+    <section id="about" class="about">
+      <h2>About HFEN Enterprises</h2>
+      <p>HFEN Enterprises supplies pure, premium and versatile oils, butters, powders and herbs for your skin, hair and wellness, from small sizes up to 1 kg or 1 litre. Shop quality, glow naturally.</p>
+      <p class="reg">CAC registered &middot; BN 3256193</p>
+    </section>
+
+    <section id="contact" class="about contact">
+      <h2>Contact us</h2>
+      <p>Questions about a product, a different size or a larger quantity? Message us and we will help.</p>
+      <div class="cbtns">
+        <a class="btn" href="https://wa.me/2348060371398?text=Hello%20HFEN%20Enterprises%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="btn ghost" href="tel:+2348060371398">Call +234 806 037 1398</a>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section id="v-checkout" hidden>
+  <div class="wrap narrow2">
+    <button class="back" data-go="shop">&larr; Continue shopping</button>
+    <h1>Checkout</h1>
+    <div class="co">
+      <form id="coForm" class="panel">
+        <h2>Your details</h2>
+        <label>Full name<input id="fName" required autocomplete="name"></label>
+        <label>Phone number<input id="fPhone" type="tel" required autocomplete="tel"></label>
+        <label>Email (optional)<input id="fEmail" type="email" autocomplete="email"></label>
+        <label>Delivery address<textarea id="fAddr" rows="3" required></textarea></label>
+        <label>City and state<input id="fCity" required></label>
+        <label>Notes (optional)<input id="fNote" maxlength="120"></label>
+        <p id="coErr" class="err" role="alert"></p>
+        <button class="btn">Send order on WhatsApp</button>
+        <p class="small muted">Your order is sent to us on WhatsApp. We reply to confirm availability, delivery and payment.</p>
+      </form>
+      <aside class="panel"><h2>Order summary</h2><ul id="sumList" class="sum"></ul><p class="total">Subtotal <strong id="sumTotal"></strong></p></aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap"><img src="logo.png" alt="" width="34" height="34"><p>&copy; <span id="year"></span> HFEN Enterprises &middot; CAC registered, BN 3256193 &middot; <a href="tel:+2348060371398">+234 806 037 1398</a><br>Shop Quality. Glow Naturally.</p></div></footer>
+
+<dialog id="dlg" aria-labelledby="dName">
+  <button class="close" id="dClose" aria-label="Close">&times;</button>
+  <div class="dgrid">
+    <div class="dpic" id="dPic"></div>
+    <div>
+      <p class="tag" id="dType"></p>
+      <h2 id="dName"></h2>
+      <p class="inci" id="dInci"></p>
+      <p class="lbl">Choose a size</p>
+      <div class="sizes" id="dSizes"></div>
+      <div class="row2"><div class="qty"><button id="qMinus" aria-label="Decrease quantity">&minus;</button><span id="qVal">1</span><button id="qPlus" aria-label="Increase quantity">+</button></div><p class="dprice" id="dPrice"></p></div>
+      <button class="btn wide" id="dAdd">Add to cart</button>
+    </div>
+  </div>
+</dialog>
+
+<a class="wa" href="https://wa.me/2348060371398?text=Hello%20HFEN%20Enterprises%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16 4C9.4 4 4 9.3 4 15.8c0 2.3.7 4.5 1.9 6.3L4 28l6.1-1.8c1.7.9 3.7 1.5 5.9 1.5 6.6 0 12-5.3 12-11.8S22.6 4 16 4zm0 21.4c-1.9 0-3.7-.5-5.2-1.4l-.4-.2-3.6 1.1 1.2-3.5-.3-.4a9.5 9.5 0 0 1-1.5-5.2C6.2 10.5 10.6 6.2 16 6.2s9.8 4.3 9.8 9.6-4.4 9.6-9.8 9.6zm5.4-7.2c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a7.8 7.8 0 0 1-3.9-3.4c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg></a>
+<div id="shade" hidden></div>
+<aside id="drawer" hidden aria-label="Cart">
+  <div class="dh"><h2>Your cart</h2><button id="drClose" aria-label="Close cart">&times;</button></div>
+  <ul id="items" class="items"></ul>
+  <p id="emptyCart" class="muted pad">Your cart is empty.</p>
+  <div class="df"><p class="total">Subtotal <strong id="subTotal"></strong></p><button class="btn wide" id="toCheckout">Checkout</button></div>
+</aside>
+<script src="products.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
